@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Crowdsourced initiative to have public data gathered for Plasma Donors and Active patients in need for Plasma.">
+    <meta name="author" content="Soumya Roy">
+    <title>Covid Warriors Online</title>
+    <link rel="icon" type="image/png" href="img/blood-donation.png">
+    <!--<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+    <!-- Bootstrap core CSS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="jquery-1.11.3.min.js"></script>
+  <script src="jquery.serializeObject.js"></script>
+  <link href="album.css" rel="stylesheet">
+    
+     
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Covid Warriors Online </a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon "></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav " >
+          <li class="nav-item active ">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#maps">Map</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:roysoumo1984@gmail.com">Contact</a>
+          </li>
+          <!-- <li class="nav-item">
+          <a href="https://ko-fi.com/adhamkhalifa"><button type="button" class="btn btn-outline-success">Support</button></a>
+          </li> -->
+        </ul>
+      </div>
+      <ul class="list-inline">
+        <li class="list-inline-item"></li>
+    </ul>
+        </nav>
+      <main role="main">
+        <div class="jumbotron-fluid text-center">
+          <div class="container">
+            <br>
+            <h3>COVID-19 Plasma donors - INDIA</h3>
+            <p class="lead">This website is to help COVID-19 patients to connect them with recovered people who want to donate their convalescent plasma*</p>
+            <p style="font-size:9pt">*Plasma treatment is still under testing and research, and it isn't 100% effective. </p>
+            <img src="img/blood-donation.png" width="120" height="120" class="rounded mx-auto d-block img-thumbnail" alt="Donate your Plasma" style="border:none;">
+            <br>
+            
+          </div>
+        </div>
+        <section class="jumbotron text-center" style="background-color:#e9ecef;">
+          <div class="container">
+            <h1>How does it work?</h1>
+            <p class="lead">You are a :</p>
+              <a href="#donor">  <button type="button" class="btn btn-outline-success btn-lg">Plasma donor</button></a>
+              <a href="#patient">  <button type="button" class="btn btn-outline-danger btn-lg">Patient</button> </a>
+          </div>
+        </section>
+        <section class="jumbotron text-center patient" id="patient">
+          <div class="container">
+            <h1>For Active COVID-19 Patients</h1>
+            <p class="lead" style="text-align: justify;">Convalescent plasma is the liquid part of blood that is collected from patients who have recovered from the novel coronavirus disease, and their antibodies can help fight the infection. You can use the MAP(to be populated once we have enough data) to find the nearest donor and get in touch to go to the nearest plasma donation center.For now to find the list of donors please click the below button</p>
+            <a href="table.html"><button type="button" class="btn btn-outline-success btn-lg">Find donors</button></a>
+          </div>
+        </section>
+        <div class="jumbotron jumbotron-fluid text-center" id="donor" style="background-color:#e9ecef;">
+          <div class="container">
+            <h1>Donors!</h1>
+            <p class="lead" style="text-align: justify;">People who have fully recovered from COVID-19 for at least two weeks are encouraged to consider donating plasma, which may help save the lives of other patients. You can add your information to our database, and <b>only your First name, Blood type and Contact number will be Visible.</b></p>
+            <p style="font-size:11pt;text-align:left;">Read this before Donating plasma: <br>
+                1. Only 14 days after symptoms disapper and negative swab result, Or 28 days after symptoms are gone.<br>
+                2. You have positive RT-PCR report for COVID-19.<br>
+                3. You cannot donate if you are pregnant.<br>
+                4. You do not have chronic diseases, especially insulin diabetics.<br>
+                5. You did not have tattoos or piercings within the last 4 months.<br>
+                6. You have valid identification and a permanent address.<br>
+                7. Only if are above 18 years and weigh at least 50 KGs.
+            </p>
+
+
+    <form name="form"  data-toggle="modal" id="form">
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="fullName">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="John Smith" name="fullName" required>
+        </div>
+
+        <div class="form-group col-4">
+            <label for="gender">Gender</label>
+            <select id="gender" class="form-control" name="Gender" required>
+            <option selected>Choose...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            </select>
+      </div>
+
+      <div class="form-group col-3">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" placeholder="Age" name="age" required>
+      </div>
+      </div>
+
+      <div class="form-row">
+        
+
+        <div class="form-group col-4">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" required>
+        </div>
+
+        <div class="form-group col-5">
+          <label for="state" class="col-sm-5 control-label">State</label>
+        <select class="form-control" id="state" name="state" required>
+          <option selected disabled>Choose...</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Puducherry">Puducherry</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="West Bengal">West Bengal</option>
+
+        </select>
+        </div>
+        <div class="form-group col-3">
+          <label for="zip" class="control-label">ZIP code</label>
+          <input id="zip" class="form-control" name="zip" type="text" inputmode="numeric" placeholder="00000" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" required>
+        </div>
+      </div>
+        <div class="form-row">
+            <div class="form-group col-5">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" required>
+            </div>
+        <div class="form-group col-3">
+            <label for="bloodType">Blood Type</label>
+            <select class="form-control" id="bloodType" name="bloodType" required>
+            <option value="">Choose..</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="other">Other</option>
+            </select>
+        </div>
+        
+        </div>
+
+        <div class="form-group">
+          <label for="diseases">Do you have any Co-morbid conditions / pre-existing ailments?</label>
+          <textarea class="form-control" id="diseases" rows="3" name="diseases"></textarea>
+        
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="recoveryDate">Date of recovery</label>
+          
+            <input class="form-control" type="date"  id="recoveryDate" name="recoveryDate" min="" required>
+            <script>
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1; //January is 0!
+                var yyyy = today.getFullYear();
+                if(dd<10){
+                        dd='0'+dd
+                    }
+                    if(mm<10){
+                        mm='0'+mm
+                    }
+                today = yyyy+'-'+mm+'-'+dd;
+                document.getElementById("recoveryDate").setAttribute("max", today);
+            </script>
+          
+        </div>
+        <div class="form-group col-6">
+            <label for="swab">Have RT-PCR Result?</label>
+            <select class="form-control" id="swab" name="swab" required>
+              <option value="">N/A</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+    </div>
+    </div>
+
+    <!-- <div class="col-auto my-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="autoSizingCheck2" required>
+          <label class="form-check-label" for="autoSizingCheck2">
+            Le <a href="">privacy policy</a>.
+            
+          </label>
+      </div>
+      </div> -->
+          <input type="submit" value="Finish" class="btn btn-primary" form="form" id="submit-form"/>
+          <p class="lead" id="errorMessage" style="color:#dc3545; font-weight: bold;"></p>
+          <p><small>We are still collecting data to populate a Map and Table ASAP! Please bear with us. <br> All information submitted is for public viewing. </bt></small><br> <b>Please share this website with your friends and family and help us Fight Covid-19 together</b></p>
+          <!-- Modal -->
+        <!--Modal End-->
+        
+    </form>
+    
+          </div>
+        </div>
+      </main>
+      <script>
+        var $form = $('form#form'),
+        url = 'https://script.google.com/macros/s/AKfycbxD6wYGw9rrDriWNHsh3OFqjkD_qoTYlWgaq8h1MDJcJTuvU7IajBYMGR8ra8Cb2CGM/exec'
+          $('#submit-form').on('click', function(e) {
+            e.preventDefault();
+            var jqxhr = $.ajax({
+              url: url,
+              method: "GET",
+              dataType: "json",
+              data: $form.serializeObject(),
+              
+            }).success(
+              alert("Form Data Submitted Successfully, you just made the Covid Warriors stronger. ")
+              
+            );
+          })
+      </script>
+    
+     <!-- <script src="js/app.js"></script> -->
+      <!-- Image and text -->
+      <footer class="footer" style="background:#e9ecef; border-top:5px solid #bdbec0; ">
+            <div class="container" >
+              <p style="text-align: center;">&copy;<script type = "text/javascript">
+                var dt = new Date();
+                document.write(dt.getFullYear() );
+             </script> Covid Warriors Online &nbsp; - A Crowdsourced Initiative</p>
+             <p class="lead">	</p>
+            </div>
+          </footer>
+</body>
+</html>
